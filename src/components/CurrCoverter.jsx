@@ -3,8 +3,13 @@ import { Container, Grid, Typography } from "@mui/material";
 import InputAmount from "./InputAmount";
 import SelectCountry from "./SelectCountry";
 import SwitchCurrency from "./SwitchCurrency";
+import { useState } from "react";
 
 const CurrCoverter = () => {
+  //setting the value of form and to whats being converted
+  const [fromCurrency, setFromCurrency] = useState("");
+  const [toCurrency, setToCurrency] = useState("");
+
   const boxStyles = {
     background: "#fdfdfd",
     marginTop: "10rem",
@@ -19,18 +24,18 @@ const CurrCoverter = () => {
 
   return (
     <Container maxWidth="md" sx={boxStyles}>
-      <Typography variant="h5"
-       sx={{ marginBottom: "2rem" }}
-       >
+      <Typography variant="h5" sx={{ marginBottom: "2rem" }}>
         Stay ahead with accurate conversions
       </Typography>
 
       {/* add grid containers */}
       <Grid container spacing={2}>
         <InputAmount />
-        <SelectCountry />
+        <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
+
         <SwitchCurrency />
-        <SelectCountry />
+
+        <SelectCountry value={toCurrency} setValue={setToCurrency} label="To" />
       </Grid>
     </Container>
   );
