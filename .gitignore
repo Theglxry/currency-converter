@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+
+# environment viariables
+*.env 
+
+
 #text files
 *.txt
 

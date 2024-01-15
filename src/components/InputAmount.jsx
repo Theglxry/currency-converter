@@ -1,22 +1,20 @@
 import { Grid, InputAdornment, TextField } from "@mui/material";
+import { useContext } from "react";
+import { CurrencyContext } from "./context/CurrencyContext";
 
+const InputAmount = () => {
+    const {amount, setAmount} = useContext(CurrencyContext)
+ 
 
-
-const InputAmount = ({defaultAmount, setDefaultAmount}) => {
 
   return (
     //md takes up the full width on screen
     <Grid item xs={12} md>
       <TextField
         label="Amount"
-        value={defaultAmount}
-        onChange={(e, newDefaultValue) =>{
-        setDefaultAmount(newDefaultValue)
-        
-        }}
-        // disableClearable
-        
-        fullWidth //sets this to true
+        value={amount}
+        onChange= {e => setAmount(e.target.value)}
+         fullWidth //sets this to true
         InputProps={{
           type: "number",
           //startAdornment to add a sign or figure

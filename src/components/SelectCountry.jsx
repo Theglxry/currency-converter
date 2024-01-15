@@ -23,7 +23,7 @@ const SelectCountry = ({ valueInput, setValueInput, label }) => {
     const currencyKey = Object.keys(item.currencies)[0]; // Extracting the first currencies key using Object.keys()
     return `${item.flag} ${currencyKey} - ${item.name.common}`; //a string rep for each country
   });
-  console.log(dataCountries);
+  // console.log(dataCountries);
  
 
 
