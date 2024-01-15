@@ -12,7 +12,7 @@ const CurrCoverter = () => {
   // const [toCurrency, setToCurrency] = useState("");
 
   //using the context api
-  const { fromCurrency, setFromCurrency, toCurrency, setToCurrency } =
+  const { fromCurrency, setFromCurrency, toCurrency, setToCurrency , defaultAmount, setDefaultAmount } =
     useContext(CurrencyContext);
 
   
@@ -40,7 +40,7 @@ const CurrCoverter = () => {
 
       {/* add grid containers */}
       <Grid container spacing={2}>
-        <InputAmount />
+        <InputAmount  defaultAmount={defaultAmount} setDefaultAmount={setDefaultAmount}/>
         <SelectCountry
           valueInput={fromCurrency}
           setValueInput={setFromCurrency}
