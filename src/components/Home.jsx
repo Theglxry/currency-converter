@@ -1,5 +1,6 @@
 // import MidComp from "./MidComp";
 import TopComp from "./TopComp";
+import CurrencyProvider from "./context/CurrencyContext";
 import CurrCoverter from "./currCoverter";
 
 const Home = () => {
@@ -14,7 +15,10 @@ const Home = () => {
       </section> */}
 
       <section className="gradBg w-full h-[50rem] border-2 bg-gray-100">
-        <CurrCoverter />
+      {/* the context */}
+      <CurrencyProvider>
+      <CurrCoverter />
+      </CurrencyProvider>
       </section>
     </main>
   );

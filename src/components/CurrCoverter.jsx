@@ -14,7 +14,7 @@ const CurrCoverter = () => {
 
 
 
-  const boxStyles = {
+  const boxStyles = { 
     background: "#fdfdfd",
     marginTop: "10rem",
     textAlign: "center",
