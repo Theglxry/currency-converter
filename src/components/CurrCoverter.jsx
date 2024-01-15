@@ -8,7 +8,11 @@ import { useState } from "react";
 const CurrCoverter = () => {
   //setting the value of form and to whats being converted
   const [fromCurrency, setFromCurrency] = useState("");
+  console.log(fromCurrency);
   const [toCurrency, setToCurrency] = useState("");
+  console.log(toCurrency);
+
+
 
   const boxStyles = {
     background: "#fdfdfd",
@@ -31,11 +35,11 @@ const CurrCoverter = () => {
       {/* add grid containers */}
       <Grid container spacing={2}>
         <InputAmount />
-        <SelectCountry value={fromCurrency} setValue={setFromCurrency} label="From" />
+        <SelectCountry valueInput={fromCurrency} setValueInput={setFromCurrency} label="From" />
 
         <SwitchCurrency />
 
-        <SelectCountry value={toCurrency} setValue={setToCurrency} label="To" />
+        <SelectCountry valueInput={toCurrency} setValueInput={setToCurrency} label="To" />
       </Grid>
     </Container>
   );

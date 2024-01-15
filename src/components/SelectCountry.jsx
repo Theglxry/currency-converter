@@ -1,7 +1,7 @@
 import { Autocomplete, Grid, Skeleton, TextField } from "@mui/material";
 import useAxios from "../hooks/useAxios";
 
-const SelectCountry = ({ value, setValue, label }) => {
+const SelectCountry = ({ valueInput, setValueInput, label }) => {
   // const {value, setValue, label}
   const [data, loading, error] = useAxios("https://restcountries.com/v3.1/all");
 
@@ -26,14 +26,14 @@ const SelectCountry = ({ value, setValue, label }) => {
   return (
     <Grid item xs={12} md={3}>
       <Autocomplete
-       value={value}
+       value={valueInput}
        onChange={(e, newValue) => {
-        e.preventDefault()
-        setValue(newValue)
+        setValueInput(newValue)
        }} 
        
         options={dataCountries}
-        renderInput={(params) => <TextField {...params} label={label} />}
+        renderInput={(params) => <TextField {...params} label={label}
+         />}
         // value="option1"
         // options={["option1", "option2"]}
       />
