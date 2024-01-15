@@ -23,6 +23,11 @@ const SelectCountry = ({ valueInput, setValueInput, label }) => {
     const currencyKey = Object.keys(item.currencies)[0]; // Extracting the first currencies key using Object.keys()
     return `${item.flag} ${currencyKey} - ${item.name.common}`; //a string rep for each country
   });
+  console.log(dataCountries);
+ 
+
+
+
 
   return (
     <Grid item xs={12} md={3}>
@@ -31,6 +36,7 @@ const SelectCountry = ({ valueInput, setValueInput, label }) => {
         onChange={(e, newValueInput) => {
           setValueInput(newValueInput);
         }}
+        disableClearable
         options={dataCountries}
         renderInput={(params) => <TextField {...params} label={label} />}
         // value="option1"

@@ -3,18 +3,24 @@ import { Container, Grid, Typography } from "@mui/material";
 import InputAmount from "./InputAmount";
 import SelectCountry from "./SelectCountry";
 import SwitchCurrency from "./SwitchCurrency";
-import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { CurrencyContext } from "./context/CurrencyContext";
 
 const CurrCoverter = () => {
-  //setting the value of form and to whats being converted
-  const [fromCurrency, setFromCurrency] = useState("");
-  console.log(fromCurrency);
-  const [toCurrency, setToCurrency] = useState("");
-  console.log(toCurrency);
+  //without context api->
+  // const [fromCurrency, setFromCurrency] = useState("");
+  // const [toCurrency, setToCurrency] = useState("");
 
+  //using the context api
+  const { fromCurrency, setFromCurrency, toCurrency, setToCurrency } =
+    useContext(CurrencyContext);
 
+  
+    useEffect(() => {
+    return () => {};
+  }, []);
 
-  const boxStyles = { 
+  const boxStyles = {
     background: "#fdfdfd",
     marginTop: "10rem",
     textAlign: "center",
@@ -35,11 +41,19 @@ const CurrCoverter = () => {
       {/* add grid containers */}
       <Grid container spacing={2}>
         <InputAmount />
-        <SelectCountry valueInput={fromCurrency} setValueInput={setFromCurrency} label="From" />
+        <SelectCountry
+          valueInput={fromCurrency}
+          setValueInput={setFromCurrency}
+          label="From"
+        />
 
         <SwitchCurrency />
 
-        <SelectCountry valueInput={toCurrency} setValueInput={setToCurrency} label="To" />
+        <SelectCountry
+          valueInput={toCurrency}
+          setValueInput={setToCurrency}
+          label="To"
+        />
       </Grid>
     </Container>
   );

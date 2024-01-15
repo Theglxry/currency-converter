@@ -6,15 +6,12 @@ import CurrCoverter from "./currCoverter";
 const Home = () => {
   return (
     <main className=" w-full h-full relative">
-      <section className="w-full h-[10rem] border-2 bg-gray-100">
+      <section className="w-full h-[15rem] ">
         <TopComp />
       </section>
+ 
 
-      {/* <section className="w-full h-auto top-[30%]  border-2 border-red-600 absolute ">
-        <CurrCoverter  />
-      </section> */}
-
-      <section className="gradBg w-full h-[50rem] border-2 bg-gray-100">
+      <section className="gradBg w-[80%] m-auto rounded-3xl sm:h-[40rem] border-2 border-transparent shadow-2xl">
       {/* the context */}
       <CurrencyProvider>
       <CurrCoverter />
