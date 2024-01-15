@@ -26,10 +26,16 @@ const SelectCountry = ({ value, setValue, label }) => {
   return (
     <Grid item xs={12} md={3}>
       <Autocomplete
-        value="option1"
-        // options={["option1", "option2"]}
+       value={value}
+       onChange={(e, newValue) => {
+        e.preventDefault()
+        setValue(newValue)
+       }} 
+       
         options={dataCountries}
         renderInput={(params) => <TextField {...params} label={label} />}
+        // value="option1"
+        // options={["option1", "option2"]}
       />
     </Grid>
   );
